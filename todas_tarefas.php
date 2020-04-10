@@ -85,7 +85,7 @@
 	<body>
 		<nav class="navbar navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="index.php">
 					<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
 					App Lista Tarefas
 				</a>
@@ -121,14 +121,14 @@
 
 											<?php if($value->status == 'realizado'){ ?>
 
-												<i style="cursor:pointer" class="fas fa-check-square fa-lg  " onclick="marcarPendente(<?= $value->id?>)"></i>
+												<i style="cursor:pointer" class="fas fa-check-square fa-lg  text-success" onclick="marcarPendente(<?= $value->id?>)"></i>
 
 
 											<?php } ?> 
 																						
 											<?php if($value->status == 'pendente'){ ?>
 
-												<i style="cursor:pointer" class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?= $value->id?>)"></i>
+												<i style="cursor:pointer" class="far fa-square fa-lg text-success" onclick="marcarRealizada(<?= $value->id?>)"></i>
 												
 
 											<?php } ?> 

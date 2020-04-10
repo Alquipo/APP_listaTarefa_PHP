@@ -78,7 +78,7 @@
 	<body>
 		<nav class="navbar navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="index.php">
 					<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
 					App Lista Tarefas
 				</a>
@@ -111,7 +111,7 @@
 										<div class="col-sm-3 mt-2 d-flex justify-content-between">
 											<i style="cursor:pointer"; class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $value->id?>)"></i>
 											<i style="cursor:pointer" class="fas fa-edit fa-lg text-info" onclick="editar(<?= $value->id?>, '<?= $value->tarefa?>')"></i>
-											<i style="cursor:pointer" class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?= $value->id?>)"></i>
+											<i style="cursor:pointer" class="far fa-square  fa-lg text-success" onclick="marcarRealizada(<?= $value->id?>)"></i>
 		
 										</div>
 									</div>
