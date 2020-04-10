@@ -75,6 +75,10 @@
 			function marcarRealizada(id){
 				location.href = 'todas_tarefas.php?acao=marcarRealizada&id='+id;
 			}
+
+			function marcarPendente(id){
+				location.href = 'todas_tarefas.php?acao=marcarPendente&id='+id;
+			}
 		</script>
 	</head>
 
@@ -113,13 +117,21 @@
 										</div>
 										<div class="col-sm-3 mt-2 d-flex justify-content-between">
 											<i style="cursor:pointer"; class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $value->id?>)"></i>
-											
+											<i style="cursor:pointer" class="fas fa-edit fa-lg text-info" onclick="editar(<?= $value->id?>, '<?= $value->tarefa?>')"></i>
+
+											<?php if($value->status == 'realizado'){ ?>
+
+												<i style="cursor:pointer" class="fas fa-check-square fa-lg  " onclick="marcarPendente(<?= $value->id?>)"></i>
+
+
+											<?php } ?> 
+																						
 											<?php if($value->status == 'pendente'){ ?>
 
-												<i style="cursor:pointer" class="fas fa-edit fa-lg text-info" onclick="editar(<?= $value->id?>, '<?= $value->tarefa?>')"></i>
 												<i style="cursor:pointer" class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?= $value->id?>)"></i>
+												
 
-											<?php } ?>
+											<?php } ?> 
 										</div>
 									</div>
 

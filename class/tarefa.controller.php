@@ -70,10 +70,26 @@
         $tarefaService->marcarRealizada();
 
         if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
-                header('Location: index.php');
-            }else{
-                 header('Location: todas_tarefas.php');
-            }
+            header('Location: index.php');
+        }else{
+            header('Location: todas_tarefas.php');
+        }
+
+    }else if($acao == 'marcarPendente'){
+        $tarefa = new Tarefa();
+        $tarefa->__set('id', $_GET['id']);
+        $tarefa->__set('id_status', 1);
+
+        $conexao= new Conexao();
+
+        $tarefaService = new TarefaService($conexao, $tarefa);
+        $tarefaService->marcarRealizada();
+
+        if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
+            header('Location: index.php');
+        }else{
+            header('Location: todas_tarefas.php');
+        }
 
     }else if($acao == 'recuperar_pendente'){
         $tarefa = new Tarefa();
