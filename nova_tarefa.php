@@ -9,6 +9,14 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	</head>
 
+	<?php if(isset($_GET['inclusao']) && $_GET['inclusao'] == 1) { ?>
+
+		<div class="bg-success pt-2 text-white d-flex justify-content-center">
+			<h5>Tarefa Inserida com Sucesso</h5>
+		</div>
+
+	<?php } ?>
+
 	<body>
 		<nav class="navbar navbar-light bg-light">
 			<div class="container">
@@ -36,10 +44,10 @@
 								<h4>Nova tarefa</h4>
 								<hr />
 
-								<form>
+								<form method="POST" action="class/tarefa.controller.php?acao=inserir">
 									<div class="form-group">
 										<label>Descrição da tarefa:</label>
-										<input type="text" class="form-control" placeholder="Exemplo: Lavar o carro">
+										<input name="tarefa" type="text" class="form-control" placeholder="Exemplo: Lavar o carro">
 									</div>
 
 									<button class="btn btn-success">Cadastrar</button>
